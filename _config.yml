@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Juan Lomeli"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/dallas.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Data Science Portfolio"
   location         : "Dallas, TX"
   email            :
@@ -112,7 +112,7 @@ author:
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
     - label: "GitHub"
-      icon: "fab fa-fw fa-github"
+      icon: "juan504n"
       # url: "https://github.com/juan504n"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
