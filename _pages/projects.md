@@ -1,7 +1,6 @@
 ---
 layout: archive
-permalink: /projects/
-title: "Project Posts by Tags"
+permalink: "Projects Posts by Tags"
 author_profile: true
 header:
     image: "/images/cowboys.jpg"
