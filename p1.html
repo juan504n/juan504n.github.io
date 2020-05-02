@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Data Science Portfolio - Juan Lomeli</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">Juan Lomeli</h1>
+							<p>Data Science Portfolio</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html" id="top-link"><span class="icon solid fa-home">Home</span></a></li>
+								<li><a href="index.html#portfolio" id="portfolio-link"><span class="icon solid fa-th">Projects</span></a></li>
+								
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+					<ul class="icons">
+						<li><a href="https://github.com/juan504n" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.linkedin.com/in/juan504n/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+						<li><a href="mailto:juan504n@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">Mean-Variance Optimization and Monte Carlo Simulation with Stocks Portfolio</h2>
+								<p></p>
+							</header>
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Modern Portfolio Theory & Mean Variance Optimization</h2>
+							</header>
+
+							<p> When it comes to risk-adverse investing, modern portfolio theory gives pratical 
+								advice for finding optimal investments in terms of risk and return. 
+								The Mean-Variance Optimization is the mathematical 
+								framework that is used to find that optimal level - given a level of risk an 
+								investor is willing to take, we can maximize the exptected return on our 
+								investment. We will apply this concept with an example portfolio with five 
+								stocks and walk through the process of finding the most optimal portfolios. 
+								This will be our example portfolio: Amazon,com (AMZN), Berkshire Hathaway Inc. 
+								(BRK-B), JPMorgan Chase & Co. (JPM), Vanguard 500 Index Fund Investor Shares 
+								(VFINX), and McDonald's (MCD).</p>
+
+								<p>Modern portfolio theory suggests that when creating a diversified portfolio, one should manage 
+									the balance of risk to reward. When two different portfolios 
+									offer the same return, the investor will prefer the less risker one if the option is available. To achieve this 
+									goal, we will use the method of mean-variance optimization to determine the most efficient portfolios.</p>
+
+								<p> Mean-variance optimization is a technique that analyzes the risk-reward ratio of different portfolios. 
+									Ideally, the investor would want the portfolio with the least risk given a set return. These portfolios sit
+									 on the efficient frontier of all possible portfolios. We can visualize this idea using the mean-variance 
+									 chart below, where the x-axis represents the amount of risk (volatility) and the y-axis represents the 
+									 expected return. The blue region represents all possible portfolios, changing the weights of the 
+									 portfolio can bring different returns and different levels of risk. On the left chart we highlight a 
+									 portfolio with a red dot – this portfolio would not be considered efficient because we can select a less 
+									 risker portfolio with the same rate of return by going towards the left of the x-axis. And one can select 
+									 a portfolio with much higher return of the same level of risk by going up on the y-axis. The chart on the 
+									 right shows a portfolio that would be considered efficient since it provides the highest amount of return for that given risk. 
+									 The portfolios that lie on the outer left region are considered the most efficient, and those profolios are considered to be on the 
+									  “efficient frontier”.</p>
+									 <img src="/images/meanvar.png" alt="Paris" style="width:60%;">
+									 <p></p>
+
+								<p> The first step is to load our portfolio's historical data into a 
+									pandas dataframe. Then we'll go on to calculate the expected return and risk of the portfolio by using the 
+									historical data of the last 20 years and getting the adjusted close for each 
+									stock.  </p>
+
+								<script src="https://gist.github.com/juan504n/ba17df3ebb808769ca53f06de6043d34.js"></script>							
+								
+								<!-- Image Center -->
+								
+								<img src="images/portfolio.png" alt="Paris" style="width:50%;">
+								
+								<!-- Break -->
+								<p>Now that we have the dataset in a pandas dataframe, we can explore the data a bit to get familiar with it. 
+									Plotting the historical data of the portfolio will give us a better 
+									understanding of the price action over the last 20 years:</p>
+								<script src="https://gist.github.com/juan504n/90c1c10ab0a2646481411dc0b77e8e02.js"></script>
+								<!-- Image Center -->
+								<img src="images/chart.png" alt="Paris" style="width:75%;">
+								</body>
+							
+								<p></p>
+								<p>The exptected mean of the portfolio is 
+									calculated by taking the sum of exptected return of each stock times the
+									weight associated to that stock. The weight refers to the percentage 
+									of the total portfolio budget is going to be allocated to that stock. For 
+									example, if we assign a weight of 0.2 for AMZN, 20% of the total portfolio
+									budget will go towards that stock. Let's do some more exploratory analysis and 
+									find the exptected annual return for each stock and the portfolio. We do this by finding the 
+									daily average return for each stock and multiply it with the number of trading days in year, 
+									which is 252. For the annual exptected return we'll take the average of the five stocks:
+									<script src="https://gist.github.com/juan504n/a4a447eccd71fe2065e0a958cf0edac4.js"></script>
+									<img src="/images/returns.png" alt="Paris" style="width:50%;">
+								</p>
+								<p>The expected risk of the portfolio can be calculated by taking the standard deviation of 
+									the portfolio using this formula. Since the portfolio has 5 stocks we'll adjust the 
+									parameters later when we generate random portfolios:</p>
+									<img src="/images/cov.png" alt="Paris" style="width:60%;">
+								
+
+								
+								<!-- Break -->
+								<p></p>
+								<h3>Generating Portfolios</h3>
+								<p>Now we will generate some portfolios with randoms weights to each stock
+									through a simulation. The total weight of the portfolio needs to be 100%
+									so we'll randomly distribute the weights of different portfolios and calculate
+									the exptected return and risk of each portfolio. To do this we will 
+									create a function generate_portfolios that will create the random portfolios and another function
+									portfolio_annual_returns that will calculate the expected return and risk of our random portfolios.
+
+								</p>
+								<script src="https://gist.github.com/juan504n/984a9affa209ec39b18f14fdce6d1966.js"></script>
+								<p></p>
+								<p>
+									Now we will run a simulation to generate our portfolios as well as finding the most efficient portfolios.
+								 </p>
+								<img src="images/para.png" alt="Paris" style="width:25%;">
+								<script src="https://gist.github.com/juan504n/f7dcf93a43e140f29ed57e27c8aa5c1b.js"></script>
+								<p>After running the random portfolio generator, the program gives us two important portfolios to consider: the portfolio with 
+									the highest Sharpe ratio and the portfolio with minimum volatility. The results are shown below with our portfolios and their 
+									respective weights. The graph below shows the results of the random portfolios that were generated along with the two portfolios 
+									highlighted with a star. The max Sharpe ratio portfolio brings an annual return of 17% and a standard deviation of 23%. The min 
+									volatility portfolio brings an annual return of 10% with a standard deviation of 17%. </p>
+								<img src="images/results.png" alt="Paris" style="width:60%;">
+								<p></p>
+								<img src="images/mv.png" alt="Paris" style="width:75%;">
+								<p></p>
+								<h3>Monte Carlo Simulation with the Optimal Portfolios</h3>
+								<p>We can use these two portfolios and run a Monte Carlo simulation to see the performance over a given time inveral. The Monte Carlo
+									simulation will be contucted by randomly drawing from the portfolio's daily returns distribution and applying the returns to our 
+									initial balance over a one year period. First lets start by finding the distribution of the portfolio's 
+									daily returns. To do this, we need to muliply the daily returns to the weights of the portfolio:
+								</p>
+								<script src="https://gist.github.com/juan504n/ffa6bc9b282dcc061c058d424ad0333c.js"></script>
+								<img src="images/tablereturns.png" alt="Paris" style="width:75%;">
+								<p></p>
+								<p>Now that we have the daily returns of each portfolio, we can compare their distributions with a
+									histogram. After plotting the histograms over each other they both look about normal, which is an 
+									assumption we'll use later for the 
+									Monte Carlo simulation. The minimum risk portfolio sits on top of the max sharpe portfolio, which
+									is shaded in blue. The minimum risk portfolio has a more narrow distribution
+									near the mean, which makes sense because that portfolio is suppose to have the least amount of 
+									variance. </p>
+								
+									<img src="images/distribution2.png" alt="Paris" style="width:75%;">
+									<p></p>
+									<p> The way that the simulation will work is that we'll randomly draw from a normal distribution using Numpy's  
+										np.random.normal function with the mean and 
+										standard deviation from the portfolio distributions. We will use these random returns to create a random walk as 
+										if the portfolio had been in the stock market for one year (known as the buy-and-hold method).
+										Then we'll compare the results of the portfolio's simulations. We are now ready for 
+										the Monte Carlo simulation, let's start with the max sharpe portfolio. The portfolio will start with a 
+										balance of  $100k 
+										:
+									</p>
+									<script src="https://gist.github.com/juan504n/d65a99e9ee7b623bba7a18e92ccf30b3.js"></script>
+									<img src="images/sim1.png" alt="Paris" style="width:50%;">
+									<p></p>
+									<p>The max sharpe portfolio simulation had good results on this run, netting about a 40% profit in one trading
+										year. Of course, with only one Monte Carlo point we cannot justify the performance of the profolio. Take 
+										for instance a different MC point that resulted in a huge loss:
+									</p>
+									<img src="images/sim2.png" alt="Paris" style="width:50%;">
+									<p></p>
+									<p> Basically, the end result could end in a huge profit, a huge loss, and everything in between. 
+										It's go to know that the simulations do resemble some characteristics of stock market, such
+										as unpredictable trends and compounding gains/losses. In this 10-year simulation, we see that the 
+										portfolio beautifully compounded into impressive gains. Results for the minimum risk portfolio are similar in terms of randomness.
+									</p>
+									<img src="images/sim3.png" alt="Paris" style="width:50%;">
+									<p></p>
+									<p> 
+										The real value of Monte Carlo simulations doesn't lie in only running one simulation, but in generating hundreds 
+										or thousands of simulations - then the we can assess the end results by modeling the probability of those results.
+										So let's compare both portfolios, each generating 1,000 simulations:
+									</p>
+									
+									<script src="https://gist.github.com/juan504n/15a9aa7b9d01c7fcb07047bd2eaed12b.js"></script>
+									<h3>Results</h3>
+									<p></p>
+									<img src="images/sim4.png" alt="Paris" style="width:50%;">
+									<img src="images/sim5.png" alt="Paris" style="width:50%;">
+									<img src="images/hist.png" alt="Paris" style="width:50%;">
+									<img src="images/hist2.png" alt="Paris" style="width:50%;">
+									<p></p>
+									<p>As expected, the simulations have a lot of variance by the end of the run, and 
+										since the distribution of each portfolio's daily returns were so similar, it is 
+										hard to tell the difference between them. By plotting the MC points on a histogram, we can quantify the 
+										MC points of each distribution and compare the performance. 
+									</p>
+									<script src="https://gist.github.com/juan504n/db77243fc4a760a88f73074144fe0d66.js"></script>
+									<img src="images/final.png" alt="Paris" style="width:60%;">
+									<p></p>
+									<p>
+										The mean for both portfolios do not differ too much, there is less than a $8,000 difference.
+										Same with the standard deviation - about a $8,000 difference. The difference in the standard 
+										deviation is a lot more significant, with the max sharpe portfolio having a standard deviation
+										of $26,513.67, the portfolio is a lot more volatile than the Min Risk portfolio. But the same is 
+										true for the upside, the former could potentially have greater profits than the other profolio. 
+										Ultimately it is up to the investor to decide the amount of risk they are willing to take on. We can 
+										 concluded that the simulation results aligned with each portolio's daily returns distribution.
+									</p>
+									<p>
+										This simulation uses a simple model to project future outcomes of the portfolio's performance
+										 over a period of time, but it not capture the realistic nature of the stock market. If one were 
+										 to assume that the stock market had a cyclical nature, it would be better to run a simulation that
+										 uses a distribution that is reinforced on the nature of the market cycle, whether it be bullish or 
+										 bearish. That being said, these tools do provide a quantifiable way to evaluate a portfolio and what 
+										 you could exptect while using the buying and holding strategy. In the next post, we'll look at portfolio 
+										 retirement survival using similar techniques and come up with the best strategies for withdrawing money during
+										 the retirement period. Stay tuned... 
+									</p>
+							</section>
+
+				
+
+				
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
