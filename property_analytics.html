@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Property Management Analytics using the The Pareto Principle</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/jl.png" alt="" /></span>
+							<h1 id="title">Juan Lomeli</h1>
+							<p>Project Portfolio</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html" id="top-link"><span class="icon solid fa-home">Home</span></a></li>
+								<li><a href="index.html#portfolio" id="portfolio-link"><span class="icon solid fa-th">Projects</span></a></li>
+								
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+					<ul class="icons">
+						<li><a href="https://github.com/juan504n" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.linkedin.com/in/juan504n/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+						<li><a href="mailto:juan504n@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">Property Management Analytics using the Pareto Principle</h2>
+								<p></p>
+							</header>
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+							<h3>Purpose</h3>
+							<br>
+							<p> The Pareto Principle refers to the 80/20 rule – where 20 percent of the causes produce 80 percent of the 
+								results. This principle can be used to identify a small group of causes that contribute to the largest results.
+								 From a business analytics perspective, this can be an important trend to discover when finding ways to increase 
+								 revenue, maximize profit, and reduce risk. We will use the Pareto Principle to identify ways to reduce 
+								 expenses, thus increasing profit margin. </p>
+							
+							<h3>Property Management & Delinquency</h3>
+							<br>
+							<p>
+								The data comes from a property management's executive summary report that contains important metrics that
+								 measure the performance of an apartment property. At the time of this report (April 2020), the company managed 175 properties
+								  across 3 to 4 different cities. Metrics in the summary report include occupancy rate, move ins, move outs, and others, but 
+								  the metric that we will be focusing on today is the delinquency of each property. The delinquency refers 
+								  to any unpaid money that a tenant owes to their landlord. 
+							</p>	
+							<p>
+								The chart below shows all the apartment properties the company manages and the delinquency per unit of each apartment. 
+								Delinquency per unit (DPU) is calculated by taking the delinquency of a property and dividing it by the number of units. 
+								This is done to normalize the delinquency across different apartment sizes, since larger apartments can produce more delinquency and
+								 thus properties with higher delinquency tends to skew towards the larger properties. Now we can compare the properties with the most delinquency
+								  by ordering them by DPU amount in descending order. The orange line represents the cumulative percentage of the total DPU for April. To the left of
+								   the vertical red line represents the 20% of properties with the with the highest DPU.  These high-DPU properties accounted for 46.8% of the total DPU for April. 
+								   In other words, one fifth of the properties in this portfolio contributed for almost half of all the DPU for the company, which is a significant amount of delinquency for
+								    a small portion of the properties. 
+							</p>
+							<img src="images/capstone1.png" alt="Paris" style="width:75%;">
+							<br>
+							<br>
+							<p>
+								By focusing the time and money on the properties with the highest delinquency, a more significant effort is made
+								 to reduce the total delinquency, instead of focusing 
+								on all the properties equally. 
+							</p>
+							<br>
+							<h3>Average Stay vs. Turnover Rate</h3>
+							<p>
+								<br>
+								Now that we have identified the properties with the highest DPU, we can run correlations on other variables 
+								and filter these properties to discover any trends. The two variables that showed interesting results were the
+								 average stay of a resident and the turnover rate at a property. The average stay is calculated by taking the average occupancy of all the residents 
+								 at a property in years and the turnover rate is the number of residents that moved out over the
+								  last year divided by the number of rooms at the property. The calculation for each variable is shown below.
+							</p>
+							<img src="images/variables.png" alt="Paris" style="width:65%;">
+							<br>
+							<br>
+							<p>
+								Plotting these two variables on a graph shows a negative correlation between them - as the turnover rate increases,
+								 the average resident stay decreases. This result is not surprising and intuitively makes sense, as more residents move out
+								  of a property the lower the average stay of that property will be. But it is reassuring that the data confirms this is the case. 
+								  Although there is a lot of variance in the regression line (r-squared of 0.16), the objective is not to create a prediction but to 
+								  show the general trend of the variables, which are negatively correlated.  
+							</p>
+							<img src="images/capstone2.png" alt="Paris" style="width:65%;">
+							<br>
+							<br>
+							<p>
+								The properties on the scatter plot are grouped into two different categories – High DPU and non-high DPU. The 
+								dots in orange represent the 36 properties with the highest DPU from the Pareto Diagram. The horizontal line, 
+								where the AvgStay=3.14, shows an important difference between the two groups; There are no high DPU properties 
+								with an average resident stay greater than 3.14 years. Therefore, we can assume that properties with a higher 
+								average resident stay of about 3 years are less likely to experience a high delinquency per unit. 
+							</p>
+							<img src="images/capstone3.png" alt="Paris" style="width:65%;">
+							<br>
+							<br>
+							<h3>Summary</h3>
+							<br>
+							<br>
+							<h4>Pareto Principle</h4>
+							<br>
+							<div style="width: 100%; margin-left: auto; margin-right: auto;">
+							<ul>
+								<li>20% of the properties (36) accounted for 46.8% of the total delinquency (DPU) for the month of April 2020</li>
+								<li>One way to reduce expenses is to focus on the top 20% of properties with a high DPU and focus on reducing the
+									delinquency caused by those properties, instead of focusing on all the properties equally.</li>
+								<li>Lowering expenses will increase overall profit margin.</li>
+							  </ul>
+							</div>
+							<br>
+							<br>
+							<h4>Average Resident Stay vs. Turnover Rate</h4>
+							<br>
+							<div style="width: 100%; margin-left: auto; margin-right: auto;">
+								<ul>
+									<li>The data shows as the turnover rate <b>increases</b>, the average stay of a resident at a property <b>decreases</b> .</li>
+									<li>There are no high DPU properties with an average resident stay above 3.14 years. Which we can assume properties with an
+										average resident stay lower than 3.14 is more likely to experience high delinquency.</li>
+									<li>Creating incentives and retention programs for residents can be beneficial to having residents stay longer at a property, and 
+										therefore less likely to experience a high delinquency.</li>
+								  </ul>
+							</div>
+
+							</section>
+
+				
+
+							
+
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
