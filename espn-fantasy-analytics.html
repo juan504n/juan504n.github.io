@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Juan Lomeli · Data scientist in Dallas</title>
-<meta name="description" content="Juan Lomeli is a data scientist in Dallas, Texas. Projects and writing on statistics, machine learning, visualization, and an analytics app for an ESPN fantasy football league.">
+<title>What I learned building an analytics app for my ESPN fantasy league · Juan Lomeli</title>
+<meta name="description" content="Luck, bench points, draft grades and trade values for a 12-team league, and the lesson I relearned every week: the dangerous bugs don&#x27;t crash, they return a confident wrong number.">
 <meta name="author" content="Juan Lomeli">
-<link rel="canonical" href="https://juan504n.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Juan Lomeli · Data scientist in Dallas">
-<meta property="og:description" content="Juan Lomeli is a data scientist in Dallas, Texas. Projects and writing on statistics, machine learning, visualization, and an analytics app for an ESPN fantasy football league.">
-<meta property="og:url" content="https://juan504n.github.io/">
+<link rel="canonical" href="https://juan504n.github.io/espn-fantasy-analytics.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What I learned building an analytics app for my ESPN fantasy league · Juan Lomeli">
+<meta property="og:description" content="Luck, bench points, draft grades and trade values for a 12-team league, and the lesson I relearned every week: the dangerous bugs don&#x27;t crash, they return a confident wrong number.">
+<meta property="og:url" content="https://juan504n.github.io/espn-fantasy-analytics.html">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0f1113" media="(prefers-color-scheme: dark)">
@@ -31,25 +31,105 @@
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="index.html#work" class="hide-sm">Work</a>
-      <a href="blog.html" class="">Writing</a>
+      <a href="blog.html" aria-current="page" class="">Writing</a>
       <a href="index.html#about" class="hide-sm">About</a>
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
     </nav>
   </div>
 </header>
 <main id="content">
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <p class="kicker"><span class="dot"></span>Data scientist · Dallas, TX</p>
-        <h1 class="display">Juan Lomeli</h1>
-        <div class="actions">
-          <a class="btn btn-primary" href="espn-fantasy-analytics.html">Read the build log <svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-          <a class="btn" href="https://github.com/juan504n" rel="me noopener"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg> GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/juan504n/" rel="me noopener"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</a>
-        </div>
+  <article>
+    <header class="article-head narrow">
+      <a class="back" href="blog.html">← All writing</a>
+      <p class="kicker"><span class="dot"></span>Case study</p>
+      <h1 class="article-title">What I learned building an analytics app for my ESPN fantasy league</h1>
+      <p class="dek">Luck, bench points, draft grades and trade values for a 12-team league, and the lesson I relearned every week: the dangerous bugs don&#x27;t crash, they return a confident wrong number.</p>
+      <div class="meta">
+        <time datetime="2026-10-09">Oct 9, 2026</time>
+        <span>7 min read</span>
+        <ul class="chips"><li class="chip">Python</li><li class="chip">React</li><li class="chip">Statistics</li><li class="chip">Fantasy football</li></ul>
       </div>
-      <figure class="board" data-animate>
+    </header>
+    <div class="prose narrow">
+<p>ESPN tells you who won. My league argues about <em>why</em>. Was that loss bad luck or a bad lineup? Who left the most points on the bench? Did anyone actually win the draft, or did they just stay healthy? Is the trade in the group chat fair, or is somebody getting fleeced?</p>
+
+<p>So I built a place to settle it: a Flask API and a React app that read our 12-team league through ESPN's fantasy API, pull in eleven seasons of public NFL box scores, and answer those questions with numbers. It started as a dashboard. It is now a couple dozen pages, about 36,000 lines of Python and TypeScript, and 626 automated tests.</p>
+
+<p>This is a tour of what it does. But the part worth writing down is a lesson I relearned about once a week: <strong>the dangerous bugs don't crash. They return a confident number that is wrong.</strong></p>
+
+<h2>What's in it</h2>
+
+<ul>
+<li><strong>Standings and luck.</strong> Records rebuilt from the scoreboard, plus an all-play record that scores every team against every other team, every week.</li>
+<li><strong>Season audit.</strong> Where a team's record sat among all the records the same scores could have produced, and how many wins each manager left on the bench.</li>
+<li><strong>Playoff odds</strong> by simulation, and <strong>bench efficiency</strong> against the optimal lineup every week.</li>
+<li><strong>Draft tools.</strong> A board built from thirteen ranking and ADP lists in three scorings, a comparison of what two lists actually disagree about, a strategy lab that drafts a whole room of bots, a draft recap graded against the preseason market, and an ADP heat map (more below).</li>
+<li><strong>Trade analyzer.</strong> Grades a deal by what it does to each team's best legal lineup and playoff odds, not by the points changing hands.</li>
+<li><strong>Weekly projections</strong> built from NFL data and scored against ESPN's, and a <strong>stats lab</strong> that runs textbook statistics on the league's own scores.</li>
+</ul>
+
+<h2>The numbers were quietly wrong</h2>
+
+<p>The first version of the dashboard looked great. Several of the numbers on it were wrong, and nothing ever raised an error. A few of my favorites:</p>
+
+<ul>
+<li><strong>"Total points" was one week's score.</strong> The column ESPN's sync filled was a single week's points, repeated on a row per week. The page summed nothing and labeled it a season.</li>
+<li><strong>The champion was seeded third.</strong> Standings sorted on raw win count. A 9-4-1 season has the same win count as a 9-5 one, so the tie the team had earned counted for nothing. Records are now rebuilt from who actually outscored whom, and seeded by win percentage, then points for.</li>
+<li><strong>The leaderboard was empty forever.</strong> Our weekly pick'em leaderboard read from a table that no code had ever written to. It rendered an empty state, politely, for every league.</li>
+<li><strong>The wrong team was crowned.</strong> The season page called the top of the regular-season table the champion. That was the wrong team in both seasons our league has played: the top seed lost the final. Worse, the sync stopped at week 14, so not a single playoff game had ever been stored.</li>
+<li><strong>Everything returned 403.</strong> ESPN retired the host an old version of the API library used, then our league went private and every call needed two browser cookies.</li>
+</ul>
+
+<p>The fix for this category isn't cleverness. It's a habit: <strong>derive numbers from the rawest data you have</strong> (the scoreboard, not a summary column), and for every bug, <strong>write the test that reproduces the original wrong number</strong>. Those tests fail with messages like <code>120.0 == 220.0</code>, which is exactly the bug a user saw, and they stay in the suite as tripwires.</p>
+
+<h2>Measuring luck</h2>
+
+<p>Head-to-head fantasy has a coin flip built in: you can post the second-highest score in the league and lose, because your opponent posted the highest. The all-play record removes the schedule. Each week, every team plays every other team's score. An example:</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Week</th><th class="num">Your score</th><th class="num">Teams beaten (of 11)</th><th class="num">All-play</th><th>Actual result</th></tr></thead>
+<tbody>
+<tr><td>A</td><td class="num">151.2</td><td class="num">10</td><td class="num">0.91</td><td>Loss (you drew the top score)</td></tr>
+<tr><td>B</td><td class="num">88.4</td><td class="num">1</td><td class="num">0.09</td><td>Win (you drew the only worse one)</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Average the all-play rate over a season and multiply by games played, and you get expected wins. The gap between that and the real record is luck. The season audit goes one step further. Redrawing the schedule makes your opponent each week uniform over the league, so your chance of winning that week is exactly your all-play rate, and the season's win total follows a Poisson binomial distribution. That can be computed exactly, with no simulation, and ties count as half a win.</p>
+
+<h2>The hardest part was names</h2>
+
+<p>The draft board lines up eight ranking lists player by player. The ranks are trivial; deciding that two rows are the same human being is not. One source writes "Marvin Harrison Jr.", another "M. Harrison". Those are one player. But "Bijan Robinson" and "Brian Robinson Jr." differ only by the suffix, and an early version merged them, reporting the consensus RB2 as one analyst's RB57.</p>
+
+<p>The rule that fixed it: suffix variants merge <em>only if no single list contains both</em>. A ranking list doesn't rank the same player twice, so a list holding both spellings proves they are different people. Most of the draft board's tests are about identity, not arithmetic, because a board that renders the wrong two players side by side fails silently.</p>
+
+<h2>Projections: ESPN still wins, and the page says so</h2>
+
+<p>I wanted a weekly PPR projection that beats ESPN's. Before writing a single feature, I built the scoreboard it would be judged on. The harness hands a model only what was knowable before kickoff. It hides gameday inactives, because letting them through tells a model exactly who scored zero. It fixes the set of scored players so a model can't pick its own test, splits by season (tune on 2018–2023, validate on 2024, test once on 2025), and bootstraps differences over weeks, not player-games.</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Season</th><th>Role</th><th class="num">MAE behind ESPN</th></tr></thead>
+<tbody>
+<tr><td>2024</td><td>Validation</td><td class="num">+0.56 pts</td></tr>
+<tr><td>2025</td><td>Test (touched once)</td><td class="num">+0.39 pts</td></tr>
+<tr><td>2026, weeks 1–2</td><td>Unseen (this season)</td><td class="num">+0.48 pts</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>ESPN wins on error every season so far. The projections page shows that scorecard right next to the numbers, including the weeks ESPN wins, which is all of them. There is one small bright spot. In week 4, the first week published before a single game was played, the model's <em>ordering</em> of players within each position beat ESPN's (rank correlation 0.40 vs 0.36), even though its point estimates were further off. A model that isn't allowed to look at the answer is humbling.</p>
+
+<h2>How much of fantasy is skill?</h2>
+
+<p>The stats lab asks the question everyone in a league has an opinion on. Treating each team-season as a group and each week as an observation, an analysis of variance on our scores says about <strong>9% of a weekly score's variance belongs to the team</strong>. The F-test is significant (p &lt; 0.001), so skill is real. It's just small next to the week-to-week noise. The same lab found that teams' weekly volatilities are statistically indistinguishable, and that the shrinkage constant the playoff odds use may be too small, though two seasons can't pin it down. It turns out the honest output of most of these tests is "you need more seasons".</p>
+
+<h2>The ADP heat map</h2>
+
+<p>The newest page borrows an idea from Hayden Winks: take the ADP board as a 12-team snake draft, and color every pick by the win rate of the fantasy teams that drafted him. Yahoo can compute that from millions of real leagues. I can see one, so the rooms are simulated and the points are real. The app drafts 2,000 leagues off the ADP, each player going somewhere between the earliest and latest pick real drafts took him at. Then it scores every roster's best lineup each week on actual NFL points, and records the share of the other eleven teams it outscored.</p>
+
+<figure class="board">
   <div class="board-head">
     <span class="board-title">2025 ADP board · rounds 1–3</span>
     <span class="board-sub">12-team PPR · weeks 1–17</span>
@@ -61,103 +141,28 @@
     <span class="legend"><span>≤40%</span><span class="ramp"></span><span>≥60%</span></span>
     <span class="board-readout" aria-live="polite">Hover a pick: win % of the teams that drafted him</span>
   </div>
-  <figcaption class="board-caption">Every square is a real pick from the 2,000 simulated leagues behind the ADP heat map, scored on actual 2025 NFL points. Green picks helped their teams win; red ones did not.</figcaption>
+  <figcaption class="board-caption">The first three rounds of 2025 PPR ADP, colored by how the teams that drafted each player did across weeks 1–17. Hover or tab through for the pick.</figcaption>
 </figure>
-    </div>
-  </section>
 
-  <section class="section" id="work" aria-labelledby="work-title">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <p class="kicker"><span class="dot"></span>Featured project</p>
-          <h2 class="section-title" id="work-title">Built for one league, honest about the numbers</h2>
-        </div>
-      </div>
-      <article class="feature">
-        <div class="feature-main">
-          <p class="kicker">2024 – present</p>
-          <h3>ESPN Fantasy Analytics</h3>
-          <p>A full-stack analytics app for a 12-team ESPN fantasy football league. It reads the league
-          through ESPN's fantasy API, adds eleven seasons of public NFL box scores, and answers the
-          arguments a league actually has, with the uncertainty attached.</p>
-          <ul class="feature-list">
-            <li><span><b>Luck & all-play.</b> Every team against every score, every week.</span></li>
-            <li><span><b>Season audit.</b> The exact distribution of records a season's scores allowed.</span></li>
-            <li><span><b>Draft tools.</b> Thirteen ranking lists reconciled player by player, a strategy lab, and an ADP heat map.</span></li>
-            <li><span><b>Trade analyzer.</b> Graded on both lineups and playoff odds, not points traded.</span></li>
-            <li><span><b>Weekly projections.</b> Scored against ESPN's every week, losses included.</span></li>
-            <li><span><b>Stats lab.</b> ANOVA, permutation tests and shrinkage on the league's own scores.</span></li>
-          </ul>
-          <a class="btn btn-primary" href="espn-fantasy-analytics.html">What I learned building it <svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-        </div>
-        <aside class="feature-side" aria-label="Project facts">
-          <dl class="stats">
-            <div><dt>Automated tests</dt><dd>626</dd></div>
-            <div><dt>Lines of code</dt><dd>36k</dd></div>
-            <div><dt>NFL player-games</dt><dd>72,890</dd></div>
-            <div><dt>Simulated drafts / board</dt><dd>2,000</dd></div>
-          </dl>
-          <div>
-            <p class="kicker" style="margin-bottom:10px">Stack</p>
-            <ul class="chips"><li class="chip">Python</li><li class="chip">Flask</li><li class="chip">SQLAlchemy</li><li class="chip">pandas</li><li class="chip">NumPy</li><li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">Tailwind</li><li class="chip">SQLite</li></ul>
-          </div>
-        </aside>
-      </article>
-    </div>
-  </section>
+<p>Christian McCaffrey, the 1.08 and the fourth back off the board, finished RB1, and the teams that took him won 61% of their weeks. Malik Nabers went one pick earlier and finished WR98; his teams won 40%. Jaxon Smith-Njigba at 3.11, the sixteenth receiver taken, finished WR2, and his teams won 60%. The rooms are seeded from the ADP list alone, so when a new week of games lands, the same 2,000 leagues are re-scored. A number moves only because of football.</p>
 
-  <section class="section" id="writing" aria-labelledby="writing-title">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <p class="kicker"><span class="dot"></span>Writing</p>
-          <h2 class="section-title" id="writing-title">Notes and case studies</h2>
-        </div>
-        <a class="btn" href="blog.html">All writing <svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-      </div>
-      <ol class="posts"><li class="post-row"><a href="espn-fantasy-analytics.html">
-  <span class="post-date">Oct 9, 2026</span>
-  <div><h3 class="post-title">What I learned building an analytics app for my ESPN fantasy league<span class="post-new">New</span></h3><p class="post-sum">Luck, bench points, draft grades and trade values for a 12-team league, and the lesson I relearned every week: the dangerous bugs don&#x27;t crash, they return a confident wrong number.</p></div>
-  <div class="post-tags"><span class="chip">Python</span><span class="chip">React</span><span class="chip">Statistics</span><span class="chip">Fantasy football</span></div>
-</a></li>
-<li class="post-row"><a href="region_segmentation_profits_sales.html">
-  <span class="post-date">Oct 8, 2020</span>
-  <div><h3 class="post-title">Scatter Plot Matrix to Visualize Regional Data</h3><p class="post-sum">Ten thousand retail sales, four regions and every product category in one chart, by encoding the extra dimensions into a scatter plot matrix.</p></div>
-  <div class="post-tags"><span class="chip">Visualization</span><span class="chip">Retail</span></div>
-</a></li>
-<li class="post-row"><a href="parallel_coordinates.html">
-  <span class="post-date">Sep 13, 2020</span>
-  <div><h3 class="post-title">Parallel Coordinates for Resident Activity Data</h3><p class="post-sum">Applications, move-ins, move-outs and renewals across 100+ apartment properties, read in one parallel coordinates plot, with brushing to pull out the outliers.</p></div>
-  <div class="post-tags"><span class="chip">Visualization</span><span class="chip">Real estate</span></div>
-</a></li>
-<li class="post-row"><a href="property_analytics.html">
-  <span class="post-date">Sep 7, 2020</span>
-  <div><h3 class="post-title">Property Management Analytics Using the Pareto Principle</h3><p class="post-sum">The 80/20 rule applied to 176 properties: where delinquency concentrates, and what average resident stay says about turnover.</p></div>
-  <div class="post-tags"><span class="chip">Pareto analysis</span><span class="chip">Real estate</span></div>
-</a></li>
-<li class="post-row"><a href="hive_vs_spark.html">
-  <span class="post-date">Jul 5, 2020</span>
-  <div><h3 class="post-title">Apache Hive vs. Spark: A Speed Comparison with a SQL Query</h3><p class="post-sum">How Hadoop&#x27;s pieces fit together, and a timed SQL query on an EC2 cluster showing why Spark SQL outruns Hive.</p></div>
-  <div class="post-tags"><span class="chip">Big data</span><span class="chip">SQL</span></div>
-</a></li></ol>
-    </div>
-  </section>
+<h2>What I'd tell myself at the start</h2>
 
-  <section class="section" id="about" aria-labelledby="about-title">
-    <div class="wrap about">
-      <div>
-        <p class="kicker"><span class="dot"></span>About</p>
-        <h2 class="section-title" id="about-title">Hi, I'm Juan.</h2>
-      </div>
-      <div class="toolbox">
-        <div><h3>Analysis</h3><ul class="chips"><li class="chip">Python</li><li class="chip">pandas</li><li class="chip">NumPy</li><li class="chip">SQL</li><li class="chip">Statistics</li><li class="chip">Simulation</li><li class="chip">Machine learning</li></ul></div>
-        <div><h3>Building</h3><ul class="chips"><li class="chip">Flask</li><li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">REST APIs</li><li class="chip">Automated testing</li></ul></div>
-        <div><h3>Data platforms</h3><ul class="chips"><li class="chip">Microsoft Fabric</li></ul></div>
-        <div><h3>Education</h3><p class="edu">M.S. Advanced Data Analytics and B.S. Mathematics,<br>University of North Texas</p></div>
-      </div>
+<ol>
+<li><strong>Build the scoreboard before the model.</strong> Every rule decided before tuning is one you can't bend to flatter yourself later.</li>
+<li><strong>Rebuild derived numbers from raw data.</strong> Summary columns lag, repeat and drop ties.</li>
+<li><strong>A regression test is only worth having if it fails when the bug comes back.</strong> I check by putting the bug back and watching the right test fail.</li>
+<li><strong>"Not enough data" is a valid answer.</strong> Most pages here say so somewhere, and that's what makes the other numbers believable.</li>
+</ol>
+
+<h2>Under the hood</h2>
+
+<p>Python 3.12, Flask, SQLAlchemy with Alembic migrations, pandas and NumPy, and a hand-written statistics module (no SciPy). The front end is React with TypeScript, Vite, Tailwind and TanStack Query. NFL data comes from nflverse's public releases, and league data from ESPN through the <code>espn-api</code> library. I'm cleaning the code up to open-source it, and I'll link the repo here when it's public.</p>
+
+
     </div>
-  </section>
+  </article>
+  <nav class="more narrow" aria-label="More writing"><div class="more-grid"><a class="more-card prev" href="region_segmentation_profits_sales.html"><span class="post-date">← Older</span><p class="post-title">Scatter Plot Matrix to Visualize Regional Data</p></a></div></nav>
 </main>
 <footer class="footer">
   <div class="wrap">

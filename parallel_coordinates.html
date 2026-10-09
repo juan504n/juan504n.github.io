@@ -1,191 +1,94 @@
-<!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Parallel Coordinates for Resident Activity Data</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-
-		<!-- Header -->
-			<div id="header">
-
-				<div class="top">
-
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/jl.png" alt="" /></span>
-							<h1 id="title">Juan Lomeli</h1>
-							<p>Project Portfolio</p>
-						</div>
-
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="index.html" id="top-link"><span class="icon solid fa-home">Home</span></a></li>
-								<li><a href="index.html#portfolio" id="portfolio-link"><span class="icon solid fa-th">Projects</span></a></li>
-								
-							</ul>
-						</nav>
-
-				</div>
-
-				<div class="bottom">
-
-					<!-- Social Icons -->
-					<ul class="icons">
-						<li><a href="https://github.com/juan504n" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/juan504n/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="mailto:juan504n@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-
-				</div>
-
-			</div>
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
-
-							<header>
-								<h2 class="alt">Parallel Coordinates for Resident Activity Data</h2>
-								<p></p>
-							</header>
-						</div>
-					</section>
-
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
-							<br>
-							<p> Parallel coordinates are a powerful tool for visualizing multidimensional quantitative datasets and discovering 
-								trends within the data. The basic idea behind creating a parallel coordinate plot is mapping out each numerical
-								 attribute of a dataset on its own vertical axis and the values of each row are connected with lines through each 
-								 attribute's vertical axis. We will use a this tool to plot the resident activity for the month of August using 
-								 apartment data. 
-							</p>
-							
-							<p>
-								The dataset contains more than 100 properties along with the metrics related to resident activity, such as: 
-								new applications, move ins, move outs, renewals, transfers, and others. A subset of the data is shown below. 
-								Another advantage of using a parallel coordinate graph is that it will show the flow of the property's activity
-								from start to finish. Very quickly we can see how many new applications convert to move ins or the number of 
-								residents moving in vs. moving out in the same month. 
-							</p>
-							<img src="images/resident_table.png" alt="Paris" style="width:60%;">
-							<br>
-							<br>
-							<p>
-								The disadvantage of using parallel coordinate is that having too much data can clutter the graph, making it less 
-								useful for analysis. For this reason, we will only plot 4 attributes from the dataset: new applications, move ins,
-								renewals, and move outs. Another technique for having less clutter on the graph is to span the entire width of each
-								attribute. This can be done in tableau by creating a calculated field and applying a min-max scaling formula to each 
-								attribute. This will rescale all the values of each attribute to a range between [0,1] allowing the minimum values
-								to lie at the bottom and the maximum values at the top. 
-
-							</p>
-							<img src="images/parallel2.png" alt="Paris" style="width:85%;">
-							<br>
-							<br>
-							<p>
-								The graph is still very much cluttered and it's difficult to make sense of the data, especially in below the 50th
-								percentile. To solve this issue, we will use a technique called brushing, which will highlight certain records in 
-								the graph. 
-							</p>
-							<img src="images/parallel3.png" alt="Paris" style="width:85%;">
-							<br>
-							<br>
-							<p>
-								Here the lines that are brushed represent the properties with the highest move outs in the upper 25th percentile.
-								Looking at the axis for move ins we can see that all of these properties were below the 40th percentile.
-								The distribution for renewals and new applications have a high variance therefore nothing significant can be concluded.
-							</p>
-							<img src="images/parallel4.png" alt="Paris" style="width:85%;">
-							<br>
-							<br>
-							<p>
-								Here the brushed lines represent the properties with the highest renewals in the upper 40th percentile. Notice for 
-								new applications and move ins, most of these properties fall below the 40th percentile range. There seems to be a 
-								tradeoff between number of move ins and number of renewals; you can high numbers in one category, but not in both. Also, 
-								these most of these properties fell in the lower half range of move outs. 
-							</p>
-							<img src="images/parallel5.png" alt="Paris" style="width:85%;">
-							<br>
-							<br>
-							<p>
-								This graph highlights the properties with highest new applications in the upper 30th percentile. Although they 
-								had high application numbers, most failed to convert into new move ins, since they have some of the lowest 
-								move in numbers. This could be for a number of reasons, 
-								such as unqualified tenants, time to process new applications, apartment units are not ready, or other reasons. 
-								They also had low some of the lowest renewal numbers and most properties had more move outs than move ins. 
-							</p>
-							<h3>Move Ins to Move Outs</h3>
-							<br>
-							<br>
-							<p>
-								Using a two axis parallel coordinate plot we can show very quickly which properties are over-performing and which are 
-								under-performing. Here the graph maps out the all the propertys' move ins to move outs. The orange lines are the 
-								properties with a net positive move ins, where move ins > move outs. The blue lines are the properties with a 
-								net negative move ins. Most of the lines are cluttered in the lower part but the over and under performers are 
-								visible on the top area of the graph.
-							</p>
-							<img src="images/parallel6.png" alt="Paris" style="width:55%;">
-							<br>
-							<br>
-							<p>
-								The over-performers are the orange lines with the steepest slope, these have the the highest move ins and the lowest 
-								move outs. In contrast, under-performers are the blue lines with the steepest slope, these have the highest move outs 
-								and the lowest move ins. 
-							</p>
-							<img src="images/parallel7.png" alt="Paris" style="width:55%;">
-							<img src="images/parallel8.png" alt="Paris" style="width:55%;">
-							<br>
-							<br>
-							<h3>Conclusion</h3>
-							<br>
-							<br>
-							<p>
-								Parallel coordinates are a great visualization tool for multidimensional data that is moderateley-sized. One can 
-								very quickly discover trends within the attributes and with the brushing technique one can highlight any subset of 
-								the data that might seem interesting for further analysis, such as the properties with the highest new applications
-								but had some of the lowest move in numbers. 
-							</p>
-							</section>
-
-				
-
-							
-
-
-			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parallel Coordinates for Resident Activity Data · Juan Lomeli</title>
+<meta name="description" content="Applications, move-ins, move-outs and renewals across 100+ apartment properties, read in one parallel coordinates plot, with brushing to pull out the outliers.">
+<meta name="author" content="Juan Lomeli">
+<link rel="canonical" href="https://juan504n.github.io/parallel_coordinates.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Parallel Coordinates for Resident Activity Data · Juan Lomeli">
+<meta property="og:description" content="Applications, move-ins, move-outs and renewals across 100+ apartment properties, read in one parallel coordinates plot, with brushing to pull out the outliers.">
+<meta property="og:url" content="https://juan504n.github.io/parallel_coordinates.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1113" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'> <rect x='1' y='1' width='6' height='6' rx='1.5' fill='%23227a45'/><rect x='9' y='1' width='6' height='6' rx='1.5' fill='%23b0901c'/><rect x='17' y='1' width='6' height='6' rx='1.5' fill='%23b4392f'/> <rect x='1' y='9' width='6' height='6' rx='1.5' fill='%23b0901c'/><rect x='9' y='9' width='6' height='6' rx='1.5' fill='%23227a45'/><rect x='17' y='9' width='6' height='6' rx='1.5' fill='%23227a45'/> <rect x='1' y='17' width='6' height='6' rx='1.5' fill='%23227a45'/><rect x='9' y='17' width='6' height='6' rx='1.5' fill='%23b4392f'/><rect x='17' y='17' width='6' height='6' rx='1.5' fill='%23227a45'/> </svg>">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Juan Lomeli, home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      <span>Juan Lomeli</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#work" class="hide-sm">Work</a>
+      <a href="blog.html" aria-current="page" class="">Writing</a>
+      <a href="index.html#about" class="hide-sm">About</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
+    </nav>
+  </div>
+</header>
+<main id="content">
+  <article>
+    <header class="article-head narrow">
+      <a class="back" href="blog.html">← All writing</a>
+      <p class="kicker"><span class="dot"></span>From the archive</p>
+      <h1 class="article-title">Parallel Coordinates for Resident Activity Data</h1>
+      <p class="dek">Applications, move-ins, move-outs and renewals across 100+ apartment properties, read in one parallel coordinates plot, with brushing to pull out the outliers.</p>
+      <div class="meta">
+        <time datetime="2020-09-13">Sep 13, 2020</time>
+        <span>3 min read</span>
+        <ul class="chips"><li class="chip">Visualization</li><li class="chip">Real estate</li></ul>
+      </div>
+    </header>
+    <div class="prose narrow">
+<p>Parallel coordinates are a powerful tool for visualizing multidimensional quantitative datasets and discovering trends within the data. The basic idea behind creating a parallel coordinate plot is mapping out each numerical attribute of a dataset on its own vertical axis and the values of each row are connected with lines through each attribute's vertical axis. We will use a this tool to plot the resident activity for the month of August using apartment data.</p>
+<p>The dataset contains more than 100 properties along with the metrics related to resident activity, such as: new applications, move ins, move outs, renewals, transfers, and others. A subset of the data is shown below. Another advantage of using a parallel coordinate graph is that it will show the flow of the property's activity from start to finish. Very quickly we can see how many new applications convert to move ins or the number of residents moving in vs. moving out in the same month.</p>
+<img src="images/resident_table.png" alt="Figure" loading="lazy">
+<p>The disadvantage of using parallel coordinate is that having too much data can clutter the graph, making it less useful for analysis. For this reason, we will only plot 4 attributes from the dataset: new applications, move ins, renewals, and move outs. Another technique for having less clutter on the graph is to span the entire width of each attribute. This can be done in tableau by creating a calculated field and applying a min-max scaling formula to each attribute. This will rescale all the values of each attribute to a range between [0,1] allowing the minimum values to lie at the bottom and the maximum values at the top.</p>
+<img src="images/parallel2.png" alt="Figure" loading="lazy">
+<p>The graph is still very much cluttered and it's difficult to make sense of the data, especially in below the 50th percentile. To solve this issue, we will use a technique called brushing, which will highlight certain records in the graph.</p>
+<img src="images/parallel3.png" alt="Figure" loading="lazy">
+<p>Here the lines that are brushed represent the properties with the highest move outs in the upper 25th percentile. Looking at the axis for move ins we can see that all of these properties were below the 40th percentile. The distribution for renewals and new applications have a high variance therefore nothing significant can be concluded.</p>
+<img src="images/parallel4.png" alt="Figure" loading="lazy">
+<p>Here the brushed lines represent the properties with the highest renewals in the upper 40th percentile. Notice for new applications and move ins, most of these properties fall below the 40th percentile range. There seems to be a tradeoff between number of move ins and number of renewals; you can high numbers in one category, but not in both. Also, these most of these properties fell in the lower half range of move outs.</p>
+<img src="images/parallel5.png" alt="Figure" loading="lazy">
+<p>This graph highlights the properties with highest new applications in the upper 30th percentile. Although they had high application numbers, most failed to convert into new move ins, since they have some of the lowest move in numbers. This could be for a number of reasons, such as unqualified tenants, time to process new applications, apartment units are not ready, or other reasons. They also had low some of the lowest renewal numbers and most properties had more move outs than move ins.</p>
+<h3>Move Ins to Move Outs</h3>
+<p>Using a two axis parallel coordinate plot we can show very quickly which properties are over-performing and which are under-performing. Here the graph maps out the all the propertys' move ins to move outs. The orange lines are the properties with a net positive move ins, where move ins > move outs. The blue lines are the properties with a net negative move ins. Most of the lines are cluttered in the lower part but the over and under performers are visible on the top area of the graph.</p>
+<img src="images/parallel6.png" alt="Figure: Move Ins to Move Outs" loading="lazy">
+<p>The over-performers are the orange lines with the steepest slope, these have the the highest move ins and the lowest move outs. In contrast, under-performers are the blue lines with the steepest slope, these have the highest move outs and the lowest move ins.</p>
+<img src="images/parallel7.png" alt="Figure: Move Ins to Move Outs" loading="lazy">
+<img src="images/parallel8.png" alt="Figure: Move Ins to Move Outs" loading="lazy">
+<h3>Conclusion</h3>
+<p>Parallel coordinates are a great visualization tool for multidimensional data that is moderateley-sized. One can very quickly discover trends within the attributes and with the brushing technique one can highlight any subset of the data that might seem interesting for further analysis, such as the properties with the highest new applications but had some of the lowest move in numbers.</p>
+<p class="archive-note">Originally published September 2020. Moved to the new site in October 2026 with the text unchanged.</p>
+    </div>
+  </article>
+  <nav class="more narrow" aria-label="More writing"><div class="more-grid"><a class="more-card prev" href="property_analytics.html"><span class="post-date">← Older</span><p class="post-title">Property Management Analytics Using the Pareto Principle</p></a><a class="more-card next" href="region_segmentation_profits_sales.html"><span class="post-date">Newer →</span><p class="post-title">Scatter Plot Matrix to Visualize Regional Data</p></a></div></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Say hello</p>
+      <p class="footer-cta"><a href="https://www.linkedin.com/in/juan504n/" rel="me noopener">Message me on LinkedIn →</a></p>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/juan504n" aria-label="GitHub" rel="me noopener"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+      <a href="https://www.linkedin.com/in/juan504n/" aria-label="LinkedIn" rel="me noopener"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+  </div>
+  <div class="wrap"><p class="fine">© 2026 Juan Lomeli · Dallas, TX · Hand-written HTML and CSS, no framework.</p></div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
 </html>

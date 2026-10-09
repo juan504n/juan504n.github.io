@@ -1,160 +1,90 @@
-<!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Project Portfolio - Juan Lomeli</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-
-		<!-- Header -->
-			<div id="header">
-
-				<div class="top">
-
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/jl.png" alt="" /></span>
-							<h1 id="title">Juan Lomeli</h1>
-							<p>Project Portfolio</p>
-						</div>
-
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="index.html" id="top-link"><span class="icon solid fa-home">Home</span></a></li>
-								<li><a href="index.html#portfolio" id="portfolio-link"><span class="icon solid fa-th">Projects</span></a></li>
-								
-							</ul>
-						</nav>
-
-				</div>
-
-				<div class="bottom">
-
-					<!-- Social Icons -->
-					<ul class="icons">
-						<li><a href="https://github.com/juan504n" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/juan504n/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="mailto:juan504n@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-
-				</div>
-
-			</div>
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
-
-							<header>
-								<h2 class="alt">Apache Hive vs. Spark: A Speed Comparison with SQL Query Example</h2>
-								<p></p>
-							</header>
-						</div>
-					</section>
-
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
-
-					<h2>Introduction</h2>
-
-					<p>
-						In the world of big data, large datasets are often larger than the hard drive memory
-						 in our personal computer and data must be stored in the cloud as a result. Extracting 
-						 data from large datasets can quickly cause performance and scalability issues since database 
-						 systems are not able to scale horizontally. This causes the query process to be 
-						 extremely slow and inefficient. To solve this problem, two popular frameworks can help process 
-						 large datasets: Hive and Spark. Both frameworks are integrated with the Apache Hadoop ecosystem. To 
-						  understand how Hive and Spark can process large datasets, one must understand how the 
-						  Hadoop ecosystem works. 
-
-					</p>
-					<h2>What is Apache Hadoop?</h2>
-					<p>
-						Apache Hadoop is an open source framework intended to make it easier to work with big data in the cloud. 
-						It is a platform that utilizes multiple modules to provide an efficient solution to everyone’s big data
-						
-						needs and stores data across clusters, making it easier to do distributed computing and storage. Hadoop 
-						uses three fundamental components: HDFS, MapReduce, and YARN. Hadoop Distributed File System (HDFS) is the data storage component of the ecosystem –
-						 creates several replicas of the data block distributed across different clusters. HDFS architecture 
-						 consists of two different nodes: name node and data node, together they help coordinate the different 
-						 clusters storing data. When retrieving the data from HDFS, the data processing layer works in the 
-						 backend to help allocate the proper resources for the Hadoop System. In Hadoop 1.0, MapReduce and 
-						 YARN was one module for the purpose of data processing, but in Hadoop 2.0 they are split apart, this allows YARN (the resource negotiator) 
-						 to be built on top of alternatives of MapReduce. One of those alternatives is Spark. 
-					</p>
-					<img src="images/hadoop.png" alt="Paris" style="width:50%;">
-					<br>
-					<br>
-					<h2>Apache Hive and Spark</h2>
-					<p>
-						It’s important to note some technical differences between the two frameworks and how they are used 
-						in the Hadoop Ecosystem. First, Hive is a data warehouse system, whereas Spark is a framework that
-						 can access external distributed data stores. Hive has to depend on MapReduce for processing the data 
-						 it queries through SQL, but Spark has it’s own Spark SQL library built in the framework. 
-						 The differences of each architecture can be shown by testing the time it takes to complete an SQL query 
-						 using each system. We will use an Amazon EC2 instance with Apache Hadoop already setup with both Hive
-						  and Spark. Using weblog data, a table has already been created to run a simple query , which will find the top 5 most  
-						  active users in the dataset. With the Hive/MapReduce Method, it took about 68 seconds to get the 
-						  results from our query. Using that same query with Spark SQL took only about 12 seconds to complete. 
-					</p>
-					<img src="images/spark.jpg" alt="Paris" style="width:50%;">
-					<img src="images/hive1.png" alt="Paris" style="width:50%;">
-					<img src="images/hive2.png" alt="Paris" style="width:50%;">
-					<img src="images/spark1.png" alt="Paris" style="width:50%;">
-					<br>
-					<br>
-					<h2>Why Spark SQL is Faster than Hive for SQL Queries</h2>
-					<p>
-						The biggest difference between Spark and Hive has to do with how the data is being processed in the 
-						Hadoop Ecosystem. Since Hive must use MapReduce for data processing, it is much slower than Spark, 
-						which runs in memory for a faster processing speed. MapReduce does not run in memory; it has to read
-						 the data from disk for each query. This is why Spark’s framework is preferred when doing real-time 
-						 analytics, it’s speed is unmatched by MapReduce. 
-					</p>
-					<br>
-					<br>
-					<h4 style="text-align:left">References:</h4>
-					<p style="text-align:left">https://www.geeksforgeeks.org/hadoop-ecosystem/</p>
-					<p style="text-align:left">https://logz.io/blog/hive-vs-spark/#:~:text=Hive%20and%20Spark%20are%20both,
-						more%20modern%20alternative%20to%20MapReduce.</p>
-					</section>
-
-				
-
-				
-
-			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy;  All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apache Hive vs. Spark: A Speed Comparison with a SQL Query · Juan Lomeli</title>
+<meta name="description" content="How Hadoop&#x27;s pieces fit together, and a timed SQL query on an EC2 cluster showing why Spark SQL outruns Hive.">
+<meta name="author" content="Juan Lomeli">
+<link rel="canonical" href="https://juan504n.github.io/hive_vs_spark.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apache Hive vs. Spark: A Speed Comparison with a SQL Query · Juan Lomeli">
+<meta property="og:description" content="How Hadoop&#x27;s pieces fit together, and a timed SQL query on an EC2 cluster showing why Spark SQL outruns Hive.">
+<meta property="og:url" content="https://juan504n.github.io/hive_vs_spark.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1113" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'> <rect x='1' y='1' width='6' height='6' rx='1.5' fill='%23227a45'/><rect x='9' y='1' width='6' height='6' rx='1.5' fill='%23b0901c'/><rect x='17' y='1' width='6' height='6' rx='1.5' fill='%23b4392f'/> <rect x='1' y='9' width='6' height='6' rx='1.5' fill='%23b0901c'/><rect x='9' y='9' width='6' height='6' rx='1.5' fill='%23227a45'/><rect x='17' y='9' width='6' height='6' rx='1.5' fill='%23227a45'/> <rect x='1' y='17' width='6' height='6' rx='1.5' fill='%23227a45'/><rect x='9' y='17' width='6' height='6' rx='1.5' fill='%23b4392f'/><rect x='17' y='17' width='6' height='6' rx='1.5' fill='%23227a45'/> </svg>">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Juan Lomeli, home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      <span>Juan Lomeli</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#work" class="hide-sm">Work</a>
+      <a href="blog.html" aria-current="page" class="">Writing</a>
+      <a href="index.html#about" class="hide-sm">About</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
+    </nav>
+  </div>
+</header>
+<main id="content">
+  <article>
+    <header class="article-head narrow">
+      <a class="back" href="blog.html">← All writing</a>
+      <p class="kicker"><span class="dot"></span>From the archive</p>
+      <h1 class="article-title">Apache Hive vs. Spark: A Speed Comparison with a SQL Query</h1>
+      <p class="dek">How Hadoop&#x27;s pieces fit together, and a timed SQL query on an EC2 cluster showing why Spark SQL outruns Hive.</p>
+      <div class="meta">
+        <time datetime="2020-07-05">Jul 5, 2020</time>
+        <span>2 min read</span>
+        <ul class="chips"><li class="chip">Big data</li><li class="chip">SQL</li></ul>
+      </div>
+    </header>
+    <div class="prose narrow">
+<h2>Introduction</h2>
+<p>In the world of big data, large datasets are often larger than the hard drive memory in our personal computer and data must be stored in the cloud as a result. Extracting data from large datasets can quickly cause performance and scalability issues since database systems are not able to scale horizontally. This causes the query process to be extremely slow and inefficient. To solve this problem, two popular frameworks can help process large datasets: Hive and Spark. Both frameworks are integrated with the Apache Hadoop ecosystem. To understand how Hive and Spark can process large datasets, one must understand how the Hadoop ecosystem works.</p>
+<h2>What is Apache Hadoop?</h2>
+<p>Apache Hadoop is an open source framework intended to make it easier to work with big data in the cloud. It is a platform that utilizes multiple modules to provide an efficient solution to everyone’s big data needs and stores data across clusters, making it easier to do distributed computing and storage. Hadoop uses three fundamental components: HDFS, MapReduce, and YARN. Hadoop Distributed File System (HDFS) is the data storage component of the ecosystem – creates several replicas of the data block distributed across different clusters. HDFS architecture consists of two different nodes: name node and data node, together they help coordinate the different clusters storing data. When retrieving the data from HDFS, the data processing layer works in the backend to help allocate the proper resources for the Hadoop System. In Hadoop 1.0, MapReduce and YARN was one module for the purpose of data processing, but in Hadoop 2.0 they are split apart, this allows YARN (the resource negotiator) to be built on top of alternatives of MapReduce. One of those alternatives is Spark.</p>
+<img src="images/hadoop.png" alt="Figure: What is Apache Hadoop?" loading="lazy">
+<h2>Apache Hive and Spark</h2>
+<p>It’s important to note some technical differences between the two frameworks and how they are used in the Hadoop Ecosystem. First, Hive is a data warehouse system, whereas Spark is a framework that can access external distributed data stores. Hive has to depend on MapReduce for processing the data it queries through SQL, but Spark has it’s own Spark SQL library built in the framework. The differences of each architecture can be shown by testing the time it takes to complete an SQL query using each system. We will use an Amazon EC2 instance with Apache Hadoop already setup with both Hive and Spark. Using weblog data, a table has already been created to run a simple query , which will find the top 5 most active users in the dataset. With the Hive/MapReduce Method, it took about 68 seconds to get the results from our query. Using that same query with Spark SQL took only about 12 seconds to complete.</p>
+<img src="images/spark.jpg" alt="Figure: Apache Hive and Spark" loading="lazy">
+<img src="images/hive1.png" alt="Figure: Apache Hive and Spark" loading="lazy">
+<img src="images/hive2.png" alt="Figure: Apache Hive and Spark" loading="lazy">
+<img src="images/spark1.png" alt="Figure: Apache Hive and Spark" loading="lazy">
+<h2>Why Spark SQL is Faster than Hive for SQL Queries</h2>
+<p>The biggest difference between Spark and Hive has to do with how the data is being processed in the Hadoop Ecosystem. Since Hive must use MapReduce for data processing, it is much slower than Spark, which runs in memory for a faster processing speed. MapReduce does not run in memory; it has to read the data from disk for each query. This is why Spark’s framework is preferred when doing real-time analytics, it’s speed is unmatched by MapReduce.</p>
+<h4>References:</h4>
+<p>https://www.geeksforgeeks.org/hadoop-ecosystem/</p>
+<p>https://logz.io/blog/hive-vs-spark/#:~:text=Hive%20and%20Spark%20are%20both, more%20modern%20alternative%20to%20MapReduce.</p>
+<p class="archive-note">Originally published July 2020. Moved to the new site in October 2026 with the text unchanged.</p>
+    </div>
+  </article>
+  <nav class="more narrow" aria-label="More writing"><div class="more-grid"><a class="more-card prev" href="dashboard.html"><span class="post-date">← Older</span><p class="post-title">Dashboard for Tracking Mileage</p></a><a class="more-card next" href="property_analytics.html"><span class="post-date">Newer →</span><p class="post-title">Property Management Analytics Using the Pareto Principle</p></a></div></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Say hello</p>
+      <p class="footer-cta"><a href="https://www.linkedin.com/in/juan504n/" rel="me noopener">Message me on LinkedIn →</a></p>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/juan504n" aria-label="GitHub" rel="me noopener"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+      <a href="https://www.linkedin.com/in/juan504n/" aria-label="LinkedIn" rel="me noopener"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+  </div>
+  <div class="wrap"><p class="fine">© 2026 Juan Lomeli · Dallas, TX · Hand-written HTML and CSS, no framework.</p></div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
 </html>
